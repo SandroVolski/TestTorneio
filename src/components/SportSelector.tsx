@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { 
-  Football, 
+  Sun, 
   Dumbbell, 
   CircleDot, 
   Dice5, 
-  Racket 
+  Target 
 } from 'lucide-react';
 
 type Sport = {
@@ -25,10 +24,10 @@ const SportSelector: React.FC<SportSelectorProps> = ({
   onSelectSport 
 }) => {
   const sports: Sport[] = [
-    { id: 'football', name: 'Futebol', icon: <Football className="h-8 w-8" /> },
+    { id: 'football', name: 'Futebol', icon: <Sun className="h-8 w-8" /> },
     { id: 'basketball', name: 'Basquete', icon: <CircleDot className="h-8 w-8" /> },
     { id: 'volleyball', name: 'Vôlei', icon: <CircleDot className="h-8 w-8" /> },
-    { id: 'handball', name: 'Handebol', icon: <Racket className="h-8 w-8" /> },
+    { id: 'handball', name: 'Handebol', icon: <Target className="h-8 w-8" /> },
     { id: 'truco', name: 'Truco', icon: <Dice5 className="h-8 w-8" /> },
     { id: 'canastra', name: 'Canastra', icon: <Dice5 className="h-8 w-8" /> },
     { 
