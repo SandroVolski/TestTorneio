@@ -23,7 +23,10 @@ interface TournamentCardProps {
 const TournamentCard: React.FC<TournamentCardProps> = ({ tournament, className }) => {
   const { id, name, sportType, date, teamsCount, status, winner } = tournament;
   
-  const getSportIcon = (type: string) => {
+  const getSportIcon = (type: string | undefined) => {
+    // Add a safeguard against undefined type
+    if (!type) return '🏆';
+    
     switch (type.toLowerCase()) {
       case 'soccer':
       case 'football':
@@ -69,7 +72,7 @@ const TournamentCard: React.FC<TournamentCardProps> = ({ tournament, className }
       <CardContent className="pb-2">
         <div className="flex items-center space-x-1 text-muted-foreground mb-2">
           <span className="text-2xl mr-2">{getSportIcon(sportType)}</span>
-          <span className="capitalize">{sportType}</span>
+          <span className="capitalize">{sportType || 'Generic'}</span>
         </div>
         
         <div className="space-y-2 text-sm">
